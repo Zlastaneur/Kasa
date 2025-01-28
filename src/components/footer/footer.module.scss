@@ -1,0 +1,19 @@
+.footer {
+	min-height: 150px;
+	padding: 40px 0;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	background-color: black;
+	color: white;
+
+	img {
+		width: 100px;
+	}
+
+	p {
+		padding-top: 1em;
+		font-weight: 300;
+	}
+}

@@ -1,0 +1,43 @@
+@use "mixins";
+@use "variables";
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+#root {
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+	font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+*,
+*:focus,
+*:hover {
+	outline: none;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+li {
+	list-style-type: none;
+}
+
+a,
+a:hover {
+	text-decoration: none;
+	color: black;
+}
+
+img {
+	object-fit: contain;
+}
+
+button:focus {
+	outline: none;
+}

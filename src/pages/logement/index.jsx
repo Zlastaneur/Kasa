@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import logements from "../logements.json"
+import logements from "../../logements.json"
 
 function Logement() {
 	const { id } = useParams()

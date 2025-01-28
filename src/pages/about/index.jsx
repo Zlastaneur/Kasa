@@ -1,6 +1,3 @@
-import { NavLink } from "react-router-dom"
-import logements from "../logements.json"
-
 function About() {
 	return (
 		<>
