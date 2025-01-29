@@ -1,0 +1,26 @@
+.error404 {
+	color: #ff6060;
+	cursor: default;
+	padding: 3rem 0;
+	display: flex;
+	flex-flow: column nowrap;
+
+	h1 {
+		font-size: 12rem;
+		margin: 0 0 2rem 0;
+	}
+
+	h2 {
+		font-weight: 500;
+	}
+
+	p {
+		margin-top: 5rem;
+		font-weight: 500;
+		font-size: 1.1em;
+		color: black;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+		cursor: pointer;
+	}
+}

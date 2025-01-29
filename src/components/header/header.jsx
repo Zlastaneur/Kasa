@@ -4,7 +4,7 @@ import styles from "./header.module.scss"
 function Header() {
 	return (
 		<header className={styles.header}>
-			<Link to={`/`}>
+			<Link to={"/"}>
 				<img src="./src/assets/logo.png" alt="Logo Kasa" />
 			</Link>
 			<ul>
