@@ -10,12 +10,12 @@ function Home() {
 			</div>
 			<ul>
 				{logements.map((logement) => (
-					<li key={logement.id}>
-						<Link to={`/logement/${logement.id}`}>
+					<Link to={`/logement/${logement.id}`} key={logement.id}>
+						<li>
 							<img src={logement.cover} alt="logement" />
 							<p>{logement.title}</p>
-						</Link>
-					</li>
+						</li>
+					</Link>
 				))}
 			</ul>
 		</section>
