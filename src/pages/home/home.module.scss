@@ -46,6 +46,11 @@
 				rgba(0, 0, 0, 0.5) 100%
 			);
 
+			&:hover {
+				transform: scale(1.05);
+				transition: ease-in 100ms;
+			}
+
 			&::after {
 				content: "";
 				position: absolute;

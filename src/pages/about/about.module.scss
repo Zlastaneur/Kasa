@@ -1,0 +1,52 @@
+.about {
+	max-width: 1400px;
+	height: 100%;
+	width: 100%;
+	margin: 0 auto;
+	padding-bottom: 3rem;
+
+	.banner {
+		height: 15rem;
+		margin-bottom: 2.2rem;
+		border-radius: 15px;
+		position: relative;
+		text-align: center;
+		background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../assets/mountain_bg.jpg") center/cover;
+	}
+
+	button {
+		width: 1200px;
+		height: 55px;
+		padding: 0 1rem;
+		margin: 0 auto 3rem auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		text-align: start;
+		font-size: 1.3rem;
+		font-weight: 700;
+		background-color: #ff6060;
+		color: white;
+		border: 0;
+		border-radius: 5px;
+		cursor: pointer;
+
+		i {
+			border: solid white;
+			border-width: 0 3px 3px 0;
+			display: inline-block;
+			padding: 6px;
+			margin-top: -5px;
+			transform: rotate(45deg);
+			-webkit-transform: rotate(45deg);
+		}
+	}
+
+	p {
+		width: 1200px;
+		margin: -3rem auto 3rem auto;
+		padding: 2rem;
+		text-align: start;
+		background-color: #f6f6f6;
+	}
+}

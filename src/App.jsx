@@ -3,7 +3,7 @@ import { Routes, Route, Link } from "react-router"
 import Home from "./pages/home/index"
 import Logement from "./pages/logement/index"
 import About from "./pages/about/index"
-import NotFound from "./pages/notFound/index.jsx"
+import NotFound from "./pages/notFound/index"
 import Header from "./components/header/header"
 import Footer from "./components/footer/footer"
 
