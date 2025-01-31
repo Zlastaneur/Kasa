@@ -7,24 +7,24 @@
 		height: 165px;
 		display: flex;
 		flex-flow: row wrap;
-	}
 
-	.infos {
-		width: 75%;
-		max-height: 160px;
-	}
+		.infos {
+			width: 75%;
+			max-height: 160px;
+		}
 
-	h1 {
-		margin: 2rem 0 0.5rem 0;
-		color: #ff6060;
-		font-weight: 500;
-		text-align: left;
-	}
+		h1 {
+			margin: 2rem 0 0.5rem 0;
+			color: #ff6060;
+			font-weight: 500;
+			text-align: left;
+		}
 
-	.location {
-		margin: 0 0 1rem 0;
-		text-align: left;
-		font-weight: 500;
+		.location {
+			margin: 0 0 1rem 0;
+			text-align: left;
+			font-weight: 500;
+		}
 	}
 
 	.details {
@@ -52,6 +52,44 @@
 				border-radius: 50%;
 				width: 70px;
 				height: 70px;
+			}
+		}
+	}
+
+	.dropdown {
+		margin: 2rem 0 4rem 0;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+
+		button {
+			width: 550px;
+			height: 55px;
+			padding: 0 1rem;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			text-align: start;
+			font-size: 1.3rem;
+			font-weight: 700;
+			background-color: #ff6060;
+			color: white;
+			border: 0;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		.description,
+		.equipements {
+			width: 550px;
+			text-align: left;
+
+			p,
+			ul {
+				margin: 0;
+				padding: 1.5rem 1.5rem;
+				background-color: #f6f6f6;
+				line-height: 150%;
 			}
 		}
 	}
