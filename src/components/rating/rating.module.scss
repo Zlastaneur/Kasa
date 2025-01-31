@@ -11,3 +11,16 @@
 		margin: 0 3px;
 	}
 }
+
+@media only screen and (max-width: 480px) {
+	.rating {
+		font-size: 1rem;
+		order: 1;
+		align-self: center;
+
+		.solidStar,
+		.emptyStar {
+			margin: 0 2px;
+		}
+	}
+}

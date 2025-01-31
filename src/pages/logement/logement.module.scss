@@ -45,7 +45,8 @@
 			.hostName {
 				margin-right: 1rem;
 				display: flex;
-				align-items: center;
+				flex-direction: column;
+				align-items: flex-start;
 			}
 
 			img {
@@ -90,6 +91,83 @@
 				padding: 1.5rem 1.5rem;
 				background-color: #f6f6f6;
 				line-height: 150%;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.logement {
+		max-width: 100%;
+		padding: 0 1rem;
+		margin: 0;
+
+		.presentation {
+			flex-flow: column nowrap;
+			margin-bottom: 0.5rem;
+			height: auto;
+
+			.infos {
+				width: 100%;
+				max-height: 100%;
+
+				h1 {
+					font-size: 1.2rem;
+				}
+
+				.location {
+					font-size: 0.9rem;
+					margin: 0;
+				}
+			}
+		}
+
+		.details {
+			margin-top: 0.5rem;
+			width: 100%;
+			flex-flow: row nowrap;
+
+			.host {
+				margin-top: 0rem;
+				font-size: 0.9rem;
+				order: 2;
+
+				.hostName {
+					margin-right: 0.5rem;
+				}
+
+				img {
+					border-radius: 50%;
+					width: 35px;
+					height: 35px;
+				}
+			}
+		}
+
+		.dropdown {
+			margin: 0 0 2rem 0;
+			display: flex;
+			flex-flow: column nowrap;
+
+			button {
+				width: 100%;
+				height: 30px;
+				margin-top: 1rem;
+				padding: 0 0.5rem;
+				font-size: 0.9rem;
+			}
+
+			.description,
+			.equipements {
+				width: 100%;
+				text-align: left;
+
+				p,
+				ul {
+					padding: 1rem 1rem;
+					line-height: 150%;
+					font-size: 0.8rem;
+				}
 			}
 		}
 	}

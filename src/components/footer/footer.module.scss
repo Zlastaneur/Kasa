@@ -18,3 +18,9 @@
 		font-weight: 300;
 	}
 }
+
+@media only screen and (max-width: 480px) {
+	.footer {
+		font-size: 0.8rem;
+	}
+}

@@ -59,7 +59,7 @@ function Logement() {
 			<div className={styles.dropdown}>
 				<div className={styles.description}>
 					<button type="button" onClick={() => handleOpen(0)}>
-						Déscription
+						Description
 						<FaChevronUp className={styles.arrow} />
 					</button>
 					{open[0] ? <p className={styles.open}>{logement.description}</p> : ""}
