@@ -11,7 +11,6 @@ function Carousel({ data }) {
 	const prevSlide = () => {
 		setSlide(slide === 0 ? data.length - 1 : slide - 1)
 	}
-
 	return (
 		<>
 			<div className={styles.carousel}>
@@ -27,6 +26,7 @@ function Carousel({ data }) {
 							/>
 						)
 					})}
+				<span>{`${slide + 1} / ${Array.isArray(data) && data.length}`}</span>
 				<BsChevronRight className={`${styles.arrow} ${styles.arrowRight}`} onClick={nextSlide} />
 			</div>
 		</>

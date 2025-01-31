@@ -25,10 +25,10 @@
 		width: 5rem;
 		height: 400px;
 		color: white;
-	}
 
-	&:hover {
-		cursor: pointer;
+		&:hover {
+			cursor: pointer;
+		}
 	}
 
 	.arrowLeft {
@@ -37,5 +37,13 @@
 
 	.arrowRight {
 		right: 1rem;
+	}
+
+	span {
+		position: absolute;
+		color: white;
+		bottom: 1rem;
+		left: 50%;
+		font-weight: 500;
 	}
 }
