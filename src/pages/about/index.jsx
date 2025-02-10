@@ -41,7 +41,7 @@ function About() {
 	]
 
 	const ToggleSection = ({ id, title, content, isOpen, handleOpen }) => (
-		<div>
+		<div className={styles.btn}>
 			<button type="button" onClick={() => handleOpen(id)}>
 				{title}
 				<i></i>

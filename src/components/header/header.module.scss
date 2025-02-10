@@ -29,6 +29,23 @@
 	}
 }
 
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+	.header {
+		max-width: 1200px;
+		padding: 2rem 1rem 3rem 1rem;
+	}
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+	.header {
+		padding-left: 1rem;
+
+		ul {
+			padding: 0;
+		}
+	}
+}
+
 @media only screen and (max-width: 480px) {
 	.header {
 		max-width: 100%;

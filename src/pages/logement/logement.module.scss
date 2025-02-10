@@ -65,7 +65,7 @@
 		min-height: auto;
 
 		button {
-			width: 550px;
+			width: 100%;
 			height: 55px;
 			padding: 0 1rem;
 			display: flex;
@@ -110,8 +110,23 @@
 		}
 	}
 }
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+	.logement {
+		padding: 0 1rem;
+		.dropdown {
+			padding: 2rem 0;
+			.wrapper {
+				width: 45%;
+			}
 
-@media only screen and (max-width: 480px) {
+			.button {
+				width: 45%;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 1024px) {
 	.logement {
 		max-width: 100%;
 		padding: 0 1rem;
