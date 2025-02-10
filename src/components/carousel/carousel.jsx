@@ -14,7 +14,7 @@ function Carousel({ data }) {
 	return (
 		<>
 			<div className={styles.carousel}>
-				<BsChevronLeft className={`${styles.arrow} ${styles.arrowLeft}`} onClick={prevSlide} />
+				{Array.isArray(data) && data.length > 2 && <BsChevronLeft className={`${styles.arrow} ${styles.arrowLeft}`} onClick={prevSlide} />}
 				{Array.isArray(data) &&
 					data.map((picture, idx) => {
 						return (
@@ -27,7 +27,7 @@ function Carousel({ data }) {
 						)
 					})}
 				<span>{`${slide + 1} / ${Array.isArray(data) && data.length}`}</span>
-				<BsChevronRight className={`${styles.arrow} ${styles.arrowRight}`} onClick={nextSlide} />
+				{Array.isArray(data) && data.length > 2 && <BsChevronRight className={`${styles.arrow} ${styles.arrowRight}`} onClick={nextSlide} />}
 			</div>
 		</>
 	)

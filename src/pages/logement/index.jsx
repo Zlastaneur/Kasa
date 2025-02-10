@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import React from "react"
 
 import logements from "../../logements.json"
@@ -13,11 +13,14 @@ import { FaChevronUp } from "react-icons/fa6"
 function Logement() {
 	const { id } = useParams()
 	const [logement, setLogement] = useState({})
+	let navigate = useNavigate()
 
 	useEffect(() => {
 		const selectedLogement = logements.find((item) => item.id === id)
 		if (selectedLogement) {
 			setLogement(selectedLogement)
+		} else {
+			navigate("logement-inexistant")
 		}
 	}, [id])
 
@@ -53,7 +56,7 @@ function Logement() {
 							<img src={logement.host.picture} alt={logement.host.name} />
 						</div>
 					)}
-					<Rating data={logement.rating} />
+					<Rating rate={logement.rating} />
 				</div>
 			</div>
 			<div className={styles.dropdown}>
@@ -62,22 +65,25 @@ function Logement() {
 						Description
 						<FaChevronUp className={styles.arrow} />
 					</button>
-					{open[0] ? <p className={styles.open}>{logement.description}</p> : ""}
+					<div className={styles.open}>{open[0] && <p className={styles.open}>{logement.description}</p>}</div>
 				</div>
-				<div className={styles.equipements}>
+
+				<div className={styles.test}>
 					<button type="button" onClick={() => handleOpen(1)}>
 						Équipements
 						<FaChevronUp className={styles.arrow} />
 					</button>
-					{open[1] ? (
-						<ul className={styles.open}>
-							{logement.equipments.map((equipement, index) => (
-								<li key={index}>{equipement}</li>
-							))}
-						</ul>
-					) : (
-						""
-					)}
+					<div className={`${styles.wrapper} ${open[1] && styles.open}`}>
+						<div className={styles.equipements}>
+							{open[1] && (
+								<ul>
+									{logement.equipments.map((equipement, index) => (
+										<li key={index}>{equipement}</li>
+									))}
+								</ul>
+							)}
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
