@@ -10,6 +10,18 @@ import styles from "./logement.module.scss"
 
 import { FaChevronUp } from "react-icons/fa6"
 
+const DetailBtn = ({ id, label, content, isOpen, handleOpen }) => (
+	<div className={styles.wrapper}>
+		<button type="button" onClick={() => handleOpen(id)} className={isOpen ? styles.open : ""}>
+			{label}
+			<FaChevronUp className={styles.arrow} />
+		</button>
+		<div className={styles.content} style={{ maxHeight: isOpen ? "500px" : "0" }}>
+			{content}
+		</div>
+	</div>
+)
+
 function Logement() {
 	const { id } = useParams()
 	const [logement, setLogement] = useState({})
@@ -60,31 +72,14 @@ function Logement() {
 				</div>
 			</div>
 			<div className={styles.dropdown}>
-				<div className={styles.description}>
-					<button type="button" onClick={() => handleOpen(0)}>
-						Description
-						<FaChevronUp className={styles.arrow} />
-					</button>
-					<div className={styles.open}>{open[0] && <p className={styles.open}>{logement.description}</p>}</div>
-				</div>
-
-				<div className={styles.test}>
-					<button type="button" onClick={() => handleOpen(1)}>
-						Équipements
-						<FaChevronUp className={styles.arrow} />
-					</button>
-					<div className={`${styles.wrapper} ${open[1] && styles.open}`}>
-						<div className={styles.equipements}>
-							{open[1] && (
-								<ul>
-									{logement.equipments.map((equipement, index) => (
-										<li key={index}>{equipement}</li>
-									))}
-								</ul>
-							)}
-						</div>
-					</div>
-				</div>
+				<DetailBtn id={0} label="Description" content={<p>{logement.description}</p>} isOpen={open[0]} handleOpen={handleOpen} />
+				<DetailBtn
+					id={1}
+					label="Équipements"
+					content={<ul>{logement.equipments && logement.equipments.map((equipement, index) => <li key={index}>{equipement}</li>)}</ul>}
+					isOpen={open[1]}
+					handleOpen={handleOpen}
+				/>
 			</div>
 		</div>
 	)
