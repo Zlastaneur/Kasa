@@ -1,5 +1,7 @@
 import { useState } from "react"
 import styles from "./about.module.scss"
+import Banner from "../../components/banner/banner"
+import ImgBanner from "../../assets/mountain_bg.jpg"
 
 function About() {
 	const [open, setOpen] = useState({})
@@ -13,7 +15,7 @@ function About() {
 
 	return (
 		<div className={styles.about}>
-			<div className={styles.banner}></div>
+			<Banner imgSrc={ImgBanner} />
 			<div>
 				<button type="button" onClick={() => handleOpen(0)}>
 					Fiabilité<i></i>

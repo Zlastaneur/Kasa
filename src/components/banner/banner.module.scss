@@ -1,0 +1,48 @@
+.banner {
+	height: 15rem;
+	margin-bottom: 2.2rem;
+	border-radius: 15px;
+	position: relative;
+	text-align: center;
+	overflow: hidden;
+
+	img {
+		width: 100%;
+		object-fit: cover;
+		margin-top: -25%;
+		filter: brightness(50%);
+	}
+
+	p {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		margin: 0;
+		color: white;
+		font-size: 2.5rem;
+		font-weight: 600;
+		cursor: default;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.banner {
+		height: 7rem;
+		margin-bottom: 2.2rem;
+		max-width: 100%;
+		max-height: 100%;
+
+		p {
+			max-width: 100%;
+			width: 100%;
+			height: 100%;
+			padding: 1rem;
+			position: absolute;
+			display: flex;
+			align-items: center;
+			text-align: left;
+			font-size: 1.25rem;
+		}
+	}
+}
