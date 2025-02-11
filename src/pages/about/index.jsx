@@ -1,7 +1,22 @@
 import { useState } from "react"
+
 import styles from "./about.module.scss"
 import Banner from "../../components/banner/banner"
 import ImgBanner from "../../assets/mountain_bg.jpg"
+
+import { FaChevronUp } from "react-icons/fa6"
+
+const ToggleSection = ({ id, title, content, isOpen, handleOpen }) => (
+	<div className={`${styles.btnWrapper} ${isOpen ? styles.open : ""}`}>
+		<button type="button" onClick={() => handleOpen(id)} className={isOpen ? styles.open : ""}>
+			{title}
+			<FaChevronUp className={styles.arrow} />
+		</button>
+		<div className={styles.content} style={{ maxHeight: isOpen ? "500px" : "0" }}>
+			<p>{content}</p>
+		</div>
+	</div>
+)
 
 function About() {
 	const [open, setOpen] = useState({})
@@ -39,16 +54,6 @@ function About() {
 				"La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services.",
 		},
 	]
-
-	const ToggleSection = ({ id, title, content, isOpen, handleOpen }) => (
-		<div className={styles.btn}>
-			<button type="button" onClick={() => handleOpen(id)}>
-				{title}
-				<i></i>
-			</button>
-			{isOpen ? <p className={styles.open}>{content}</p> : ""}
-		</div>
-	)
 
 	return (
 		<div className={styles.about}>

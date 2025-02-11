@@ -81,7 +81,7 @@
 			cursor: pointer;
 
 			.arrow {
-				transition: transform 0.3s ease-in-out;
+				transition: transform 0.3s linear;
 			}
 
 			&.open .arrow {
