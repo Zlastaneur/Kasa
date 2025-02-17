@@ -7,7 +7,7 @@ import ImgBanner from "../../assets/beach_bg.jpg"
 function Home() {
 	return (
 		<section className={styles.homepage}>
-			<Banner text={"Chez vous, partout et ailleurs"} imgSrc={ImgBanner} />
+			<Banner text="Chez vous, partout et ailleurs" imgSrc={ImgBanner} />
 			<ul>
 				{logements.map((logement) => (
 					<Link to={`/logement/${logement.id}`} key={logement.id}>

@@ -3,20 +3,7 @@ import { useState } from "react"
 import styles from "./about.module.scss"
 import Banner from "../../components/banner/banner"
 import ImgBanner from "../../assets/mountain_bg.jpg"
-
-import { FaChevronUp } from "react-icons/fa6"
-
-const ToggleSection = ({ id, title, content, isOpen, handleOpen }) => (
-	<div className={`${styles.btnWrapper} ${isOpen ? styles.open : ""}`}>
-		<button type="button" onClick={() => handleOpen(id)} className={isOpen ? styles.open : ""}>
-			{title}
-			<FaChevronUp className={styles.arrow} />
-		</button>
-		<div className={styles.content} style={{ maxHeight: isOpen ? "500px" : "0" }}>
-			<p>{content}</p>
-		</div>
-	</div>
-)
+import DropdownBtn from "../../components/dropdownBtn/dropdownBtn"
 
 function About() {
 	const [open, setOpen] = useState({})
@@ -58,16 +45,19 @@ function About() {
 	return (
 		<div className={styles.about}>
 			<Banner imgSrc={ImgBanner} />
-			{sections.map((section) => (
-				<ToggleSection
-					key={section.id}
-					id={section.id}
-					title={section.title}
-					content={section.content}
-					isOpen={open[section.id]}
-					handleOpen={handleOpen}
-				/>
-			))}
+			<div className={styles.dropdown}>
+				{sections.map((section) => (
+					<DropdownBtn
+						key={section.id}
+						id={section.id}
+						label={section.title}
+						content={<p>{section.content}</p>}
+						isOpen={open[section.id]}
+						handleOpen={handleOpen}
+						styles={styles}
+					/>
+				))}
+			</div>
 		</div>
 	)
 }

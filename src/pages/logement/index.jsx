@@ -6,21 +6,8 @@ import logements from "../../logements.json"
 import Carousel from "../../components/carousel/carousel"
 import Tags from "../../components/tags/tags"
 import Rating from "../../components/rating/rating"
+import DropdownBtn from "../../components/dropdownBtn/dropdownBtn"
 import styles from "./logement.module.scss"
-
-import { FaChevronUp } from "react-icons/fa6"
-
-const DetailBtn = ({ id, label, content, isOpen, handleOpen }) => (
-	<div className={styles.wrapper}>
-		<button type="button" onClick={() => handleOpen(id)} className={isOpen ? styles.open : ""}>
-			{label}
-			<FaChevronUp className={styles.arrow} />
-		</button>
-		<div className={styles.content} style={{ maxHeight: isOpen ? "500px" : "0" }}>
-			{content}
-		</div>
-	</div>
-)
 
 function Logement() {
 	const { id } = useParams()
@@ -72,13 +59,21 @@ function Logement() {
 				</div>
 			</div>
 			<div className={styles.dropdown}>
-				<DetailBtn id={0} label="Description" content={<p>{logement.description}</p>} isOpen={open[0]} handleOpen={handleOpen} />
-				<DetailBtn
+				<DropdownBtn
+					id={0}
+					label="Description"
+					content={<p>{logement.description}</p>}
+					isOpen={open[0]}
+					handleOpen={handleOpen}
+					styles={styles}
+				/>
+				<DropdownBtn
 					id={1}
 					label="Équipements"
 					content={<ul>{logement.equipments && logement.equipments.map((equipement, index) => <li key={index}>{equipement}</li>)}</ul>}
 					isOpen={open[1]}
 					handleOpen={handleOpen}
+					styles={styles}
 				/>
 			</div>
 		</div>
