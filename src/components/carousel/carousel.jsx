@@ -11,10 +11,13 @@ function Carousel({ data }) {
 	const prevSlide = () => {
 		setSlide(slide === 0 ? data.length - 1 : slide - 1)
 	}
+
+	const hasMultipleSlides = () => Array.isArray(data) && data.length > 2
+
 	return (
 		<>
 			<div className={styles.carousel}>
-				{Array.isArray(data) && data.length > 2 && <BsChevronLeft className={`${styles.arrow} ${styles.arrowLeft}`} onClick={prevSlide} />}
+				{hasMultipleSlides() && <BsChevronLeft className={`${styles.arrow} ${styles.arrowLeft}`} onClick={prevSlide} />}
 				{Array.isArray(data) &&
 					data.map((picture, idx) => {
 						return (
@@ -26,8 +29,8 @@ function Carousel({ data }) {
 							/>
 						)
 					})}
-				<span>{`${slide + 1} / ${Array.isArray(data) && data.length}`}</span>
-				{Array.isArray(data) && data.length > 2 && <BsChevronRight className={`${styles.arrow} ${styles.arrowRight}`} onClick={nextSlide} />}
+				{hasMultipleSlides() && <span>{`${slide + 1} / ${Array.isArray(data) && data.length}`}</span>}
+				{hasMultipleSlides() && <BsChevronRight className={`${styles.arrow} ${styles.arrowRight}`} onClick={nextSlide} />}
 			</div>
 		</>
 	)
